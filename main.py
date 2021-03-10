@@ -1,14 +1,16 @@
 from fileHandling import JsonHandle
 from updateBMIProfile import UpdateBMIProfile
 from analysisBMI import AnalysisBMI
-
+from unitTest import TestBMICalculator
+import unittest
 class BMICalculator():
     def __init__(self):
         pass
 
     jsonHandle = JsonHandle()
     updateProfileData = UpdateBMIProfile()
-    analysisBMIData = AnalysisBMI()  
+    analysisBMIData = AnalysisBMI()
+
     # Read Input Json File
     defaultData = jsonHandle.readFile('InputData.json')
     
@@ -23,4 +25,7 @@ class BMICalculator():
     jsonHandle.writeFile( defaultData,'OutputData.json')
 
 
-startBMICalculator = BMICalculator()
+    
+
+if __name__ == '__main__':
+    startBMICalculator = BMICalculator()
